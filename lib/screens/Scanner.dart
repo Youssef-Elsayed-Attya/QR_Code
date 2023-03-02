@@ -106,57 +106,54 @@ class _ScannerState extends State<Scanner> {
 
   @override
   Widget build(BuildContext context) {
-    return ModalProgressHUD(
-      inAsyncCall: Progress,
-      child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.deepPurple,
-          title: Text('Qr'),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.deepPurple,
-        body: ListView(
-          padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
-          children: [
-            Center(
-              child: Container(
-                alignment: Alignment.center,
-                width: 400,
-                height: 400,
-                decoration: BoxDecoration(
-                    boxShadow: [BoxShadow()],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      qrstr,
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(0),
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateColor.resolveWith(
-                              (states) => Colors.deepPurple),
-                        ),
-                        onPressed: scanQr,
-                        child: Text(
-                          'Scan',
-                          style: TextStyle(fontSize: 20),
-                        ),
+        title: Text('Qr'),
+      ),
+      backgroundColor: Colors.deepPurple,
+      body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
+        children: [
+          Center(
+            child: Container(
+              alignment: Alignment.center,
+              width: 400,
+              height: 400,
+              decoration: BoxDecoration(
+                  boxShadow: [BoxShadow()],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    qrstr,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(0),
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateColor.resolveWith(
+                            (states) => Colors.deepPurple),
+                      ),
+                      onPressed: scanQr,
+                      child: Text(
+                        'Scan',
+                        style: TextStyle(fontSize: 20),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
